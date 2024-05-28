@@ -1,0 +1,112 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    direction: rtl;
+}
+
+.home-body {
+    background-image: url(../assets/imgs/home-background.jpg);
+    background-size: cover;
+}
+
+.login-body-backgound {
+    background-image: url(../assets/imgs/login-background.jpg);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.login-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-container {
+    min-height: 50vh;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 375px;
+}
+
+.login-form>* {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.full-height {
+    height: calc(100vh - 80px);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.title-box {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 2px solid gray;
+    border-radius: 0.5rem;
+}
+
+.card-width {
+    flex: 0 0 300px !important;
+}
+
+.image-container {
+    width: 256px;
+    height: 216px;
+    margin: auto;
+    text-align: center;
+}
+
+.image-column>img,
+.image-container>img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-column {
+    height: calc(100vh - 84px);
+}
+
+.separator {
+    flex: 0 0 1px;
+    width: 1px;
+    background-color: #333;
+    padding: 0;
+    margin: 40px 0;
+}
+
+.payment-col {
+    width: calc(50% - 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.was-validated .form-control.is-invalid:valid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    border-color: #dc3545;
+}

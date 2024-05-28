@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/all.min.css">
+    <link rel="stylesheet" href="../lib/Bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../style/fonts.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>حساب جديد</title>
+</head>
+
+<body class="login-body login-body-backgound" dir="rtl">
+    <div class="container d-flex align-items-center justify-content-center w-50 card shadow login-container">
+        <div class="card-body p-4 w-100 h-50">
+            <form class="login-form needs-validation" style="height: 676px;" novalidate>
+                <h2 class="card-title text-center">انشاء حساب جديد</h2>
+                <div class="">
+                    <label for="email" class="form-label">البريد الالكتروني</label>
+                    <input type="email" style="direction: rtl;" class="form-control" id="email"
+                        placeholder="البريد الالكتروني" required
+                        pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}">
+                    <div class="invalid-feedback">الرجاء اذخال بريد الكتروني صالح</div>
+                </div>
+
+                <div class="">
+                    <label for="username" class="form-label">اسم المستخدم</label>
+                    <input type="text" class="form-control" id="username" placeholder="اسم المستخدم"
+                        pattern="[a-zA-Z][a-zA-Z0-9]*" required>
+                    <div class="invalid-feedback">الرجاء ادخال اسم مستخدم صالح... يحب ان يحتوي اسم المستخدم على
+                        حروف لاتينية وأرقام فقط</div>
+                </div>
+
+                <div class="">
+                    <label for="password" class="form-label">كلمة المرور:</label>
+                    <input type="password" class="form-control" id="password" placeholder="كلمة المرور" required>
+                    <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                </div>
+
+                <div class="">
+                    <label for="confirm-password" class="form-label">تأكيد كلمة المرور</label>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="تأكيد كلمة المرور"
+                        required>
+                    <div class="invalid-feedback">يجب ان يكون تأكيد كلمة المرور مطابق لكلمة المرور</div>
+                </div>
+
+                <div class="">
+                    <label for="full-name" class="form-label">الاسم الكامل</label>
+                    <input type="text" class="form-control" id="full-name" placeholder="الاسم الكامل" required>
+                    <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                </div>
+
+                <div class="">
+                    <label for="phone" class="form-label">رقم الهاتف</label>
+                    <input type="text" class="form-control" id="phone" placeholder="رقم الهاتف"
+                        pattern="[+]?[\d\s\-]{8,}" required>
+                    <div class="invalid-feedback">الرجاء اذخال رقم هاتف صالح</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block d-block m-auto w-25">انشاء</button>
+            </form>
+            <a class="btn btn-link btn-block d-block m-auto" href="../login/">دخول</a>
+        </div>
+    </div>
+
+    <footer class="text-center">©️ 2023 جميع الحقوق محفوظة</footer>
+    <script src="../lib/jQuery/jQuery.js"></script>
+    <script src="../lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../script/common.js"></script>
+    <script src="../script/register.js"></script>
+</body>
+
+</html>

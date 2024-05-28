@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/all.min.css">
+    <link rel="stylesheet" href="../lib/Bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../style/fonts.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>المنتجات</title>
+</head>
+
+<body class="" dir="rtl">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../home/">متجرنا</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../home/">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../products">المنتجات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../store">متجري الشخصي</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-2">
+                        <a class="btn btn-light" href="../cart">العربة</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-danger" onclick="logout()">خروج</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row fs-5">
+            <div class="col-md-6 image-column d-flex flex-column justify-content-center align-items-center">
+                <img  src="../assets/imgs/loading.gif" alt="" id="product-image">
+            </div>
+            <div class="col-md-6 p-5">
+                <h1 id="product-name"></h1>
+                <p id="product-description" class="mb-5"></p>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row mb-3">
+                            <div class="col fw-bold">
+                                البائع:
+                            </div>
+                            <div id="product-seller" class="col">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col fw-bold">
+                                الكفالة:
+                            </div>
+                            <div id="product-warranty" class="col">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col fw-bold">
+                                طريفة الدفع:
+                            </div>
+                            <div class="col">
+                                البطاقة
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col fw-bold">
+                                السعر:
+                            </div>
+                            <div id="product-price" class="text-end" class="col text-start">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col fw-bold">
+                                الكمية:
+                            </div>
+                            <div class="col">
+                                <input id="product-quantity" type="number" min="1" value="1" class="form-control">
+                                <span></span>
+                            </div>
+                            <div class="col">
+                                من
+                            </div>
+                            <div class="col" id="product-availableStock">
+                            </div>
+                            <div class="col">
+                                وحدة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 text-center">
+                        <button onclick="addToCart()" class="btn btn-primary w-25 m-auto">أضف الى العربة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center position-static">©️ 2023 جميع الحقوق محفوظة</footer>
+    <script src="../lib/jQuery/jQuery.js"></script>
+    <script src="../lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../script/common.js"></script>
+    <script src="../script/product.js"></script>
+</body>
+
+</html>

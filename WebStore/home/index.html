@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/all.min.css">
+    <link rel="stylesheet" href="../lib/Bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../style/fonts.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>الصفحة الرئيسية</title>
+</head>
+
+<body class="" dir="rtl">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../home/">متجرنا</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../home/">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../products">المنتجات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../store">متجري الشخصي</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-2">
+                        <a class="btn btn-light" href="../cart">العربة</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-danger" onclick="logout()">خروج</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="home-body">
+        <div class="container full-height">
+            <div class="row h-100">
+                <div class="col-md-6 align-items-center d-flex">
+                    <div class="title-box p-3">
+                        <h1>أهلا بكم في متجرنا</h1>
+                        <p>مرحبًا بك في موقعنا الإلكتروني! نحن متجر إلكتروني يوفر لك تجربة تسوق مميزة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="mt-4 mb-3">صفقات اليوم</h2>
+        <div id="todayDeals" class="card-group">
+            <p style="flex: 1" class="text-center fs-4">
+                يتم الآن التحميل...
+            </p>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="mt-4 mb-3">الأفضل مبيعا</h2>
+        <div id="topSeller" class="card-group">
+            <p style="flex: 1" class="text-center fs-4">
+                يتم الآن التحميل...
+            </p>
+        </div>
+    </div>
+    <footer class="text-center position-static">©️ 2023 جميع الحقوق محفوظة</footer>
+    <script src="../lib/jQuery/jQuery.js"></script>
+    <script src="../lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../script/common.js"></script>
+    <script src="../script/home.js"></script>
+</body>
+
+</html>

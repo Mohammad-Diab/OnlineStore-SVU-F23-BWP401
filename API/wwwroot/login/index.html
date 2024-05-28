@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../lib/fontAwesome/css/all.min.css" />
+    <link rel="stylesheet" href="../lib/Bootstrap/css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="../style/fonts.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <titleدخول< /title>
+</head>
+
+<body class="login-body login-body-backgound" dir="rtl">
+    <div class="container d-flex align-items-center justify-content-center w-50 card shadow">
+        <div class="card-body p-4 w-100 h-50">
+            <form class="login-form needs-validation" novalidate>
+                <h2 class="card-title text-center">تسجيل الدخول</h2>
+                <div class="">
+                    <label for="username" class="form-label">اسم المستخدم</label>
+                    <input type="text" class="form-control" id="username" placeholder="اسم المستخدم" required />
+                    <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                </div>
+
+                <div class="">
+                    <label for="password" class="form-label">كلمة المرور:</label>
+                    <input type="password" class="form-control" id="password" placeholder="كلمة المرور" required />
+                    <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block d-block m-auto w-25">
+                    دخول
+                </button>
+            </form>
+            <a class="btn btn-link btn-block d-block m-auto" href="../register">حساب جديد</a>
+        </div>
+    </div>
+
+    <footer class="text-center">©️ 2023 جميع الحقوق محفوظة</footer>
+    <script src="../lib/jQuery/jQuery.js"></script>
+    <script src="../lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../script/common.js"></script>
+    <script src="../script/login.js"></script>
+</body>
+
+</html>

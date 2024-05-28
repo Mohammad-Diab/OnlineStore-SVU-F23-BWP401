@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/all.min.css">
+    <link rel="stylesheet" href="../lib/Bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../style/fonts.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>شراء الآن</title>
+</head>
+
+<body class="login-body-backgound" dir="rtl">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../home/">متجرنا</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../home/">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../products">المنتجات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../store">متجري الشخصي</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-2">
+                        <a class="btn btn-light" href="../cart">العربة</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link text-danger" onclick="logout()">خروج</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login-body" style="height: 100%;">
+        <div class="container d-flex align-items-center justify-content-center w-50 card shadow">
+            <div class="card-body p-4 w-100">
+                <h2>شراء الآن</h2>
+                <form id="buyNowForm" class="login-form" style="height: auto;" onsubmit="buyNow(event)">
+                    <div class="row">
+                        <div class="col-md-6 payment-col">
+                            <h3>العربة وطريقة الدفع</h3>
+                            <div style="height: 100%; max-height: 40vh; overflow-y: auto;">
+                                <h5 class="mb-1">العربة: </h5>
+                                <table class="table table-borderless">
+                                    <tbody id="cartTable">
+                                        <tr>
+                                            <td colspan="3" class="text-center fs-4">يتم الآن التحميل...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mb-3">
+                                <h5 class="mb-1">الدفع بواسطة:</h5>
+                                <div class="form-check">
+                                    <input onchange="updatePaymentMethod('cash')" checked class="form-check-input"
+                                        type="radio" name="paymentMethod" id="cashOnDelivery" value="cash">
+                                    <label class="form-check-label" for="cashOnDelivery">الدفع عند الاستلام</label>
+                                </div>
+                                <div class="form-check">
+                                    <input onchange="updatePaymentMethod('card')" class="form-check-input" type="radio"
+                                        name="paymentMethod" id="cardPayment" value="card">
+                                    <label class="form-check-label" for="cardPayment">بطاقة</label>
+                                </div>
+                            </div>
+                            <div id="card-div" class="mb-3 d-flex">
+                                <select id="cards" class="form-select form-check-inline">
+                                    <option selected>يتم الآن التحميل...</option>
+                                </select>
+                                <button type="button" class="btn btn-primary" style="flex: 0 0 120px"
+                                    data-bs-toggle="modal" data-bs-target="#manageCardsModal">ادارة بطاقاتي</button>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="col-md-6 payment-col">
+                            <h3>تفاصيل التوصيل</h3>
+                            <div class="mb-3">
+                                <label for="reciverName">اسم المستلم:</label>
+                                <input type="text" class="form-control" id="reciverName" placeholder="ادخل اسم المستلم"
+                                    required>
+                                <div id="reciverNameError" class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">رقم الهاتف:</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="ادخل رقم الهاتف"
+                                    required>
+                                <div id="phoneError" class="invalid-feedback">أدخل رقم هاتف صالح</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">اليريد الالكتروني للمستلم:</label>
+                                <input type="email" class="form-control" id="email"
+                                    placeholder="ادخل البريد الالكتروني للمستلم" required>
+                                <div id="emailError" class="invalid-feedback">أدخل بريد الكتروني صالح</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address">عنوان التوصيل:</label>
+                                <textarea class="form-control" id="address" placeholder="ادخل عنوان التوصيل" rows="3"
+                                    required></textarea>
+                                <div id="addressError" class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="instructions">تعليمات التوصيل:</label>
+                                <input type="text" class="form-control" id="instructions"
+                                    placeholder="ادخل تعليمات التوصيل">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary">شراء الآن</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="manageCardsModal" tabindex="-1" aria-labelledby="manageCardsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="manageCardsModalLabel">ادارة البطاقات</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <form id="addCardForm" class="card-form" onsubmit="addCard(event)">
+                            <h3>ادارة البطاقات</h3>
+                            <div class="row mt-3">
+                                <div class="col-md-8">
+                                    <label for="cardNumber">رقم البطاقة</label>
+                                    <input type="number" class="form-control" id="cardNumber"
+                                        placeholder="أدخل رقم البطاقة" required>
+                                    <div id="cardNumberError" class="invalid-feedback">رقم البطاقة يجب ان يكون مكون من
+                                        16 رقما</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cvc">رقم التحقق من البطاقة</label>
+                                    <input type="number" class="form-control" id="cvc"
+                                        placeholder="أدخل رقم التحقق من البطاقة" required>
+                                    <div id="cvcError" class="invalid-feedback">الرجاء اذخال رقم تحقق صالح</div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-8">
+                                    <label for="cardName">الاسم على البطاقة</label>
+                                    <input type="text" class="form-control" id="cardName"
+                                        placeholder="أدخل الاسم على البطاقة" required>
+                                    <div id="cardNameError" class="invalid-feedback">إدخل الاسم الظاهر على
+                                        البطاقة والذي يجب أن يكون أقل من ٥٠ حرفاً.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="expiryDate">تارخ انتهاء الصلاحية</label>
+                                    <input type="text" class="form-control" id="expiryDate"
+                                        placeholder="أدخل تاريخ انتهاء الصلاحية" required>
+                                    <div id="expiryDateError" class="invalid-feedback">أدخل شهر وسنة انتهاء
+                                        صلاحيةالبطاقة
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3" id="add-card">أضف البطاقة</button>
+                        </form>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>معرف</th>
+                                <th>رقم البطاقة</th>
+                                <th>الاسم على البطاقة</th>
+                                <th>تاريخ انتهاء الصلاحية</th>
+                                <th>الاجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cardsTable">
+                            <tr>
+                                <td colspan="5" class="text-center">يتم الآن التحميل...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">©️ 2023 جميع الحقوق محفوظة</footer>
+    <script src="../lib/jQuery/jQuery.js"></script>
+    <script src="../lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../script/common.js"></script>
+    <script src="../script/buynow.js"></script>
+</body>
+
+</html>
