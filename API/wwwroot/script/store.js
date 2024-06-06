@@ -81,6 +81,8 @@ function deleteProduct(id) {
             if (result) {
                 getAllProducts();
                 $('#addProductModal').modal('hide');
+                form.reset();
+                form.classList.remove('was-validated');
             } else {
                 showMessage("فشل حفظ المنتج")
             }

@@ -63,13 +63,13 @@ namespace OnlineStore
         internal static List<ProductGrid> GetTodayDeals()
         {
 
-            List<Product> products = Product.GetTodayDeals(10);
+            List<Product> products = Product.GetTodayDeals(5);
             return products.Select(x => new ProductGrid(x)).ToList();
         }
 
         internal static List<ProductGrid> GetTopProducts()
         {
-            List<Product> products = Product.GetTopProducts(10);
+            List<Product> products = Product.GetTopProducts(5);
             return products.Select(x => new ProductGrid(x)).ToList();
 
         }

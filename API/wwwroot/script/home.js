@@ -18,4 +18,5 @@ $(document).ready(function () {
 });
 
 let imageLoadingCount = 0
+document.documentElement.style.setProperty('--animate-duration', '1s');
 

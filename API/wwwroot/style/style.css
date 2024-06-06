@@ -55,9 +55,14 @@ body {
 }
 
 footer {
+    font-family: 'Segoe UI';
+    font-weight: lighter;
+    font-size: 1.2em;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0px;
+    left: 0px;
+    padding-left: 24px;
+    padding-bottom: 8px;
     right: 0;
 }
 

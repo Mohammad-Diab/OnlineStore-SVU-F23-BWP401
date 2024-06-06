@@ -5,3 +5,5 @@ $(document).ready(function () {
         }
     });
 });
+
+document.documentElement.style.setProperty('--animate-duration', '1s');

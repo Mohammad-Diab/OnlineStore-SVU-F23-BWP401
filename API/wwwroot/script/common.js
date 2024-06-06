@@ -139,7 +139,6 @@ function redirectToPage(pageLink) {
     const currentUrl = new URL(window.location.href);
     currentUrl.search = '';
     currentUrl.hash = '';
-    debugger
     const newUrl = `${currentUrl.origin}${currentUrl.pathname.replace(/\/$/, '')}/${pageLink}`;
     window.location.href = newUrl;
 }

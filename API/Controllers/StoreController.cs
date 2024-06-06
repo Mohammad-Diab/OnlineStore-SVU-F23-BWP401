@@ -115,11 +115,11 @@ namespace OnlineStore.Controllers
         {
             try
             {
-                var userId = Authentication.GetUserId(getTokenValue());
-                if (string.IsNullOrEmpty(userId))
-                {
-                    return new ApiResponse<string> (500, "يرجى اعادة تسجيل الدخول");
-                }
+                //var userId = Authentication.GetUserId(getTokenValue());
+                //if (string.IsNullOrEmpty(userId))
+                //{
+                //    return new ApiResponse<string> (500, "يرجى اعادة تسجيل الدخول");
+                //}
                 string result = Logic.GetImage(path);
                 return new ApiResponse<string>(result);
             }

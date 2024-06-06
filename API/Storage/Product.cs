@@ -87,7 +87,7 @@ namespace OnlineStore
                 string query = $"{BaseQuery} ORDER BY NEWID();";
                 SqlDataReader? reader = DatabaseConnection.Query(query);
                 int i = count;
-                while (reader?.Read() ?? false && i > 0)
+                while ((reader?.Read() ?? false) && i > 0)
                 {
                     Product product = new Product(reader);
                     products.Add(product);
@@ -107,7 +107,7 @@ namespace OnlineStore
                 string query = $"{BaseQuery} ORDER BY PURCHASE_COUNT DESC";
                 SqlDataReader? reader = DatabaseConnection.Query(query);
                 int i = count;
-                while (reader?.Read() ?? false && i > 0)
+                while ((reader?.Read() ?? false) && i > 0)
                 {
                     Product product = new Product(reader);
                     products.Add(product);

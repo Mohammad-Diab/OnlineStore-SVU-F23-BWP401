@@ -81,7 +81,6 @@ catch (Exception ex)
     Console.WriteLine(ex.ToString());
 }
 
-Debugger.Launch();
 DatabaseConnection.SetConnectionStringValue(connectionString, databaseServer, databaseName, databaseUsername, Authentication.Decrypt(databasePassword));
 Files.SetUploadImagePath(imageDirectory);
 Config.setApiUrl(serverUrl);
